@@ -1,0 +1,106 @@
+{
+  "name": "DataHill IPython Data Analysis MCP Server",
+  "version": "1.0.0",
+  "description": "A lightweight data analysis MCP tool based on real IPython kernel",
+  "author": "DataHill Team",
+  "license": "MIT",
+  "mcpServers": {
+    "dataHill": {
+      "command": "python",
+      "args": ["DATA_MCP.py"],
+      "env": {
+        "PYTHONPATH": ".",
+        "DATA_ANALYSIS_MODE": "professional",
+        "DATAHILL_VERSION": "1.0",
+        "PANDAS_DISPLAY_MAX_ROWS": "100",
+        "MATPLOTLIB_BACKEND": "Agg"
+      },
+      "cwd": ".",
+      "timeout": 30000,
+      "stdio": true
+    }
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "create_ipython_session",
+        "description": "Create new IPython session for data analysis"
+      },
+      {
+        "name": "execute_code", 
+        "description": "Execute Python code, magic commands, and system commands"
+      },
+      {
+        "name": "load_csv_file",
+        "description": "Load CSV files with automatic encoding detection"
+      },
+      {
+        "name": "load_excel_file",
+        "description": "Load Excel files (supports .xlsx/.xls)"
+      },
+      {
+        "name": "sample_column_data",
+        "description": "Smart sampling for large dataset column viewing"
+      },
+      {
+        "name": "check_memory_usage",
+        "description": "Monitor memory usage and system resources"
+      }
+    ],
+    "features": {
+      "session_management": true,
+      "data_loading": true,
+      "code_execution": true,
+      "memory_monitoring": true,
+      "smart_sampling": true,
+      "multi_format_support": true,
+      "encoding_detection": true
+    }
+  },
+  "future_roadmap": {
+    "multi_agent_system": {
+      "phase_1": {
+        "duration": "3 months",
+        "agents": [
+          "data_analysis_expert",
+          "visualization_expert", 
+          "statistical_analysis_expert"
+        ]
+      },
+      "phase_2": {
+        "duration": "6 months",
+        "features": [
+          "agent_collaboration_framework",
+          "machine_learning_expert",
+          "report_generation_expert"
+        ]
+      },
+      "phase_3": {
+        "duration": "9 months", 
+        "features": [
+          "data_cleaning_expert",
+          "time_series_expert",
+          "business_analysis_expert"
+        ]
+      },
+      "phase_4": {
+        "duration": "12 months",
+        "features": [
+          "agent_orchestration_platform",
+          "custom_agent_builder",
+          "distributed_agent_system"
+        ]
+      }
+    }
+  },
+  "supported_clients": [
+    "Claude Desktop",
+    "MCP stdio clients",
+    "Custom MCP implementations"
+  ],
+  "system_requirements": {
+    "python": ">=3.8",
+    "memory": "4GB+ recommended",
+    "os": ["Windows", "macOS", "Linux"]
+  }
+}

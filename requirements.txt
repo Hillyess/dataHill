@@ -1,0 +1,73 @@
+# IPython 数据分析 MCP 服务器依赖
+# DataHill Project Dependencies
+
+# ============================================================================
+# 核心 MCP 和 IPython 依赖 / Core MCP and IPython Dependencies
+# ============================================================================
+fastmcp>=0.5.0              # MCP 服务器框架 / MCP server framework
+ipython>=8.0.0               # IPython 交互式环境 / IPython interactive environment
+pydantic>=2.0.0              # 数据模型和验证 / Data models and validation
+
+# ============================================================================
+# 数据处理核心库 / Data Processing Core Libraries
+# ============================================================================
+pandas>=2.0.0                # 数据处理和分析 / Data processing and analysis
+numpy>=1.24.0                # 数值计算基础库 / Numerical computation foundation
+
+# ============================================================================
+# 文件格式支持 / File Format Support
+# ============================================================================
+openpyxl>=3.1.0              # Excel .xlsx 文件支持 / Excel .xlsx file support
+xlrd>=2.0.0                  # Excel .xls 文件支持 / Excel .xls file support
+
+# ============================================================================
+# 系统监控和管理 / System Monitoring and Management
+# ============================================================================
+psutil>=5.9.0                # 内存和系统监控 / Memory and system monitoring
+
+# ============================================================================
+# 可选依赖 - 数据可视化 / Optional Dependencies - Data Visualization
+# ============================================================================
+matplotlib>=3.7.0            # 基础绘图库 / Basic plotting library
+seaborn>=0.12.0              # 统计可视化 / Statistical visualization
+plotly>=5.15.0               # 交互式可视化 / Interactive visualization
+
+# ============================================================================
+# 可选依赖 - 机器学习 / Optional Dependencies - Machine Learning
+# ============================================================================
+scikit-learn>=1.3.0          # 机器学习库 / Machine learning library
+scipy>=1.11.0                # 科学计算库 / Scientific computing library
+
+# ============================================================================
+# 可选依赖 - 高级数据格式 / Optional Dependencies - Advanced Data Formats
+# ============================================================================
+pyarrow>=12.0.0              # Parquet 文件支持 / Parquet file support
+h5py>=3.9.0                  # HDF5 文件支持 / HDF5 file support
+sqlalchemy>=2.0.0            # 数据库连接 / Database connectivity
+
+# ============================================================================
+# 可选依赖 - 性能优化 / Optional Dependencies - Performance Optimization
+# ============================================================================
+numba>=0.57.0                # JIT 编译加速 / JIT compilation acceleration
+
+# ============================================================================
+# 开发和测试依赖 / Development and Testing Dependencies
+# ============================================================================
+pytest>=7.4.0               # 测试框架 / Testing framework
+pytest-asyncio>=0.21.0      # 异步测试支持 / Async testing support
+black>=23.0.0                # 代码格式化 / Code formatting
+flake8>=6.0.0                # 代码检查 / Code linting
+
+# ============================================================================
+# 未来多智能体系统依赖 / Future Multi-Agent System Dependencies
+# ============================================================================
+# 以下依赖将在多智能体系统开发阶段添加
+# The following dependencies will be added during multi-agent system development phase
+
+# langchain>=0.1.0           # 智能体框架 / Agent framework
+# langgraph>=0.1.0           # 图形化智能体工作流 / Graphical agent workflows  
+# openai>=1.0.0              # OpenAI API 支持 / OpenAI API support
+# anthropic>=0.25.0          # Anthropic API 支持 / Anthropic API support
+# chromadb>=0.4.0            # 向量数据库 / Vector database
+# faiss-cpu>=1.7.4           # 相似性搜索 / Similarity search
+# transformers>=4.35.0       # 预训练模型 / Pre-trained models
