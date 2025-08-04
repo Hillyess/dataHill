@@ -1,7 +1,3 @@
-# dataHill
-
-An MCP service that automates data analysis through IPython sessions.
-
 IPython 数据分析 MCP 设计文档
 
 # 1. 项目概述
@@ -30,14 +26,15 @@ IPython 数据分析 MCP 设计文档
 # 2. 技术架构
 
 ## 2.1 整体架构
-
+```mermaid
 graph TD
-    A["MCP Client<br/>(Claude/其他大模型)<br/>(via stdio)"] -->|"MCP Protocol"| B["FastMCP Server<br/>- Tool Registry<br/>- Request Handler"]
-    B --> C["Session Manager<br/>- Multi Sessions<br/>- State Isolation"]
-    C --> D["IPython Shells<br/>- Real IPython<br/>- Magic Commands<br/>- Shell Commands"]
-    
-    classDef box fill:#fff,stroke:#333,stroke-width:2px
-    class A,B,C,D box
+    A[MCP Client] -->|via stdio| B[MCP Protocol]
+    B --> C[FastMCP Server]
+    C --> D[Session Manager]
+    D --> E[IPython Shells]
+ 
+
+```
 
 ## 2.2 技术选型
 
