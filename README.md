@@ -50,39 +50,37 @@
 
 ### 🛠️ 安装配置
 
-#### 1. 克隆项目
+#### 方法一：使用 uvx 直接运行（推荐）
+
+无需克隆项目，直接使用 uvx 从 GitHub 运行：
 
 ```bash
-git clone git@github.com:Hillyess/dataHill.git
-cd dataHill
+# 安装 uvx（如果还没有安装）
+pip install uvx
+
+# 直接运行 MCP 服务器
+uvx --from git+https://github.com/Hillyess/dataHill.git DATA_MCP.py
 ```
 
-#### 2. 创建虚拟环境
+#### 方法二：本地安装开发
 
 ```bash
-# 使用 conda
+# 1. 克隆项目
+git clone git@github.com:Hillyess/dataHill.git
+cd dataHill
+
+# 2. 创建虚拟环境
 conda create -n data-analyzer python=3.10
 conda activate data-analyzer
 
-# 或使用 venv
-python -m venv data-analyzer
-source data-analyzer/bin/activate  # Linux/macOS
-# 或 data-analyzer\Scripts\activate  # Windows
-```
-
-#### 3. 安装依赖
-
-```bash
+# 3. 安装依赖
 pip install -r requirements.txt
-```
 
-#### 4. 测试安装
-
-```bash
+# 4. 测试安装
 python DATA_MCP.py
 ```
 
-#### 5. 配置 MCP 客户端
+#### 配置 MCP 客户端
 
 ##### Claude Desktop 配置
 
@@ -91,6 +89,23 @@ python DATA_MCP.py
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
+**推荐配置（使用 uvx）**：
+```json
+{
+  "mcpServers": {
+    "dataHill": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/Hillyess/dataHill.git",
+        "DATA_MCP.py"
+      ]
+    }
+  }
+}
+```
+
+**本地开发配置**（如果使用方法二）：
 ```json
 {
   "mcpServers": {
@@ -132,72 +147,6 @@ check_memory_usage("session_a1b2c3d4")
 # 7. 清理会话
 delete_ipython_session("session_a1b2c3d4")
 ```
-
-### 🎯 未来开发计划 - 多智能体系统
-
-#### 阶段一：基础智能体框架 (3个月)
-- [ ] **数据分析专家智能体**
-  - 自动数据探索和质量评估
-  - 智能特征工程建议
-  - 自动化EDA报告生成
-  
-- [ ] **可视化专家智能体** 
-  - 智能图表类型推荐
-  - 自动化可视化生成
-  - 交互式仪表板创建
-  
-- [ ] **统计分析专家智能体**
-  - 自动假设检验选择
-  - 统计显著性分析
-  - A/B测试分析自动化
-
-#### 阶段二：协作智能体生态 (6个月)
-- [ ] **智能体协作框架**
-  - 任务分解和分配机制
-  - 智能体间通信协议
-  - 结果整合和验证系统
-  
-- [ ] **机器学习专家智能体**
-  - 自动模型选择和调优
-  - 特征重要性分析
-  - 模型解释和诊断
-  
-- [ ] **报告生成专家智能体**
-  - 自动化分析报告撰写
-  - 业务洞察提取
-  - 多格式报告输出
-
-#### 阶段三：高级智能体功能 (9个月)
-- [ ] **数据清洗专家智能体**
-  - 异常值检测和处理
-  - 缺失值填充策略
-  - 数据质量评分系统
-  
-- [ ] **时间序列专家智能体**
-  - 趋势和季节性分析
-  - 预测模型构建
-  - 异常检测和预警
-  
-- [ ] **业务分析专家智能体**
-  - KPI指标体系构建
-  - 业务逻辑验证
-  - 决策支持建议
-
-#### 阶段四：企业级智能体平台 (12个月)
-- [ ] **智能体编排平台**
-  - 可视化智能体工作流设计
-  - 任务调度和资源管理
-  - 性能监控和优化
-  
-- [ ] **自定义智能体构建器**
-  - 领域专家智能体快速创建
-  - 智能体能力扩展机制
-  - 知识库集成和管理
-  
-- [ ] **分布式智能体系统**
-  - 多节点智能体部署
-  - 负载均衡和容错机制
-  - 企业级安全和权限管理
 
 ### 🔧 系统要求
 
@@ -286,39 +235,37 @@ A lightweight data analysis MCP (Model Context Protocol) tool based on real IPyt
 
 ### 🛠️ Installation & Configuration
 
-#### 1. Clone Project
+#### Method 1: Direct Run with uvx (Recommended)
+
+No need to clone the project, run directly from GitHub using uvx:
 
 ```bash
-git clone git@github.com:Hillyess/dataHill.git
-cd dataHill
+# Install uvx (if not already installed)
+pip install uvx
+
+# Run MCP server directly
+uvx --from git+https://github.com/Hillyess/dataHill.git DATA_MCP.py
 ```
 
-#### 2. Create Virtual Environment
+#### Method 2: Local Installation for Development
 
 ```bash
-# Using conda
+# 1. Clone project
+git clone git@github.com:Hillyess/dataHill.git
+cd dataHill
+
+# 2. Create virtual environment
 conda create -n data-analyzer python=3.10
 conda activate data-analyzer
 
-# Or using venv
-python -m venv data-analyzer
-source data-analyzer/bin/activate  # Linux/macOS
-# or data-analyzer\Scripts\activate  # Windows
-```
-
-#### 3. Install Dependencies
-
-```bash
+# 3. Install dependencies
 pip install -r requirements.txt
-```
 
-#### 4. Test Installation
-
-```bash
+# 4. Test installation
 python DATA_MCP.py
 ```
 
-#### 5. Configure MCP Client
+##### Configure MCP Client
 
 ##### Claude Desktop Configuration
 
@@ -327,6 +274,23 @@ Edit Claude Desktop configuration file:
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
+**Recommended Configuration (using uvx)**:
+```json
+{
+  "mcpServers": {
+    "dataHill": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/Hillyess/dataHill.git",
+        "DATA_MCP.py"
+      ]
+    }
+  }
+}
+```
+
+**Local Development Configuration** (if using Method 2):
 ```json
 {
   "mcpServers": {
@@ -368,72 +332,6 @@ check_memory_usage("session_a1b2c3d4")
 # 7. Clean up session
 delete_ipython_session("session_a1b2c3d4")
 ```
-
-### 🎯 Future Development Plan - Multi-Agent System
-
-#### Phase 1: Basic Agent Framework (3 months)
-- [ ] **Data Analysis Expert Agent**
-  - Automated data exploration and quality assessment
-  - Intelligent feature engineering suggestions
-  - Automated EDA report generation
-  
-- [ ] **Visualization Expert Agent**
-  - Smart chart type recommendations
-  - Automated visualization generation
-  - Interactive dashboard creation
-  
-- [ ] **Statistical Analysis Expert Agent**
-  - Automatic hypothesis test selection
-  - Statistical significance analysis
-  - A/B testing automation
-
-#### Phase 2: Collaborative Agent Ecosystem (6 months)
-- [ ] **Agent Collaboration Framework**
-  - Task decomposition and assignment mechanisms
-  - Inter-agent communication protocols
-  - Result integration and validation systems
-  
-- [ ] **Machine Learning Expert Agent**
-  - Automatic model selection and tuning
-  - Feature importance analysis
-  - Model interpretation and diagnostics
-  
-- [ ] **Report Generation Expert Agent**
-  - Automated analysis report writing
-  - Business insight extraction
-  - Multi-format report output
-
-#### Phase 3: Advanced Agent Features (9 months)
-- [ ] **Data Cleaning Expert Agent**
-  - Outlier detection and handling
-  - Missing value imputation strategies
-  - Data quality scoring system
-  
-- [ ] **Time Series Expert Agent**
-  - Trend and seasonality analysis
-  - Forecasting model construction
-  - Anomaly detection and alerting
-  
-- [ ] **Business Analysis Expert Agent**
-  - KPI metric system construction
-  - Business logic validation
-  - Decision support recommendations
-
-#### Phase 4: Enterprise Agent Platform (12 months)
-- [ ] **Agent Orchestration Platform**
-  - Visual agent workflow design
-  - Task scheduling and resource management
-  - Performance monitoring and optimization
-  
-- [ ] **Custom Agent Builder**
-  - Rapid domain expert agent creation
-  - Agent capability extension mechanisms
-  - Knowledge base integration and management
-  
-- [ ] **Distributed Agent System**
-  - Multi-node agent deployment
-  - Load balancing and fault tolerance
-  - Enterprise-grade security and permission management
 
 ### 🔧 System Requirements
 
